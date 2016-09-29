@@ -1,6 +1,9 @@
 create database socialNet;
-
 use socialNet;
+
+CREATE USER 'USERNAME'@'localhost' identified BY 'PASSWORD';
+USE socialnet;
+grant ALL ON socialnet.* to 'USERNAME'@'localhost';
 
 CREATE TABLE SocialUser( 
 
