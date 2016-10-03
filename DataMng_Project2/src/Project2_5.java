@@ -67,100 +67,48 @@ public class Project2_5 {
 	    	preparedStmt2 = con.prepareStatement(str2);
 	    	preparedStmt2.execute();
 	    	con.commit();
-	    	/*
-	    	//Interviews during 2013 and 2014
-	    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-	    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-	    			+ "'2013-01-01')";
-	    	preparedStmt2 = con.prepareStatement(str2);
-	    	preparedStmt2.execute();
-	    	con.commit();
-	    	
-	    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-	    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-	    			+ "'2014-01-01')";
-	    	preparedStmt2 = con.prepareStatement(str2);
-	    	preparedStmt2.execute();
-	    	con.commit();
-	    	
-	    	//Champion Recruiter 2014 - 2016
-	    	for(int i = 2; i < 12; i++){
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2014-01-0"+i+"')";
-		    	preparedStmt2 = con.prepareStatement(str2);
-		    	preparedStmt2.execute();
-		    	con.commit();
-		    	
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2015-01-0"+i+"')";
-		    	preparedStmt2 = con.prepareStatement(str2);
-		    	preparedStmt2.execute();
-		    	con.commit();
-		    	
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2016-01-0"+i+"')";
-		    	preparedStmt2 = con.prepareStatement(str2);
-		    	preparedStmt2.execute();
-		    	con.commit();
-	    	}
-	    	*/
-	    	//JobPost 'Worker' max salary
-	    	
+	  
+	    	// 'Great opportunity!'
 	    	for(int i = 0; i < 250000; i++){
 	    	str2 = "INSERT INTO JobPost(id, jobPosition, minSalary, maxSalary, description,"
-	    			+ " active, recruiter, schedueled, company)" +
-	    			"VALUES ('"+i+"', 'Worker', NULL, NULL, 'Great opportunity!', True, "
-	    					+ "(SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-	    					+ "NULL, "
-	    					+ "(SELECT id FROM Company WHERE companyName='Company1'))";
+	    			+ " active, company)" +
+	    			"VALUES ('"+i+"', 'Worker', NULL, NULL, 'Great opportunity!', True, '1')";
 	    	
 	    	preparedStmt2 = con.prepareStatement(str2);
 	    	preparedStmt2.execute();
 	    	con.commit();
 	    	}
-	    	
+	    	// 'MongoDB'
 	    	for(int i = 250000; i < 500000; i++){
 	    	str2 = "INSERT INTO JobPost(id, jobPosition, minSalary, maxSalary, description,"
-	    			+ " active, recruiter, schedueled, company)" +
-	    			"VALUES ('"+i+"', 'Worker', NULL, NULL, 'MongoDB', True, "
-	    					+ "(SELECT email FROM Recruiter WHERE email='email2@email.com'), "
-	    					+ "NULL, "
-	    					+ "(SELECT id FROM Company WHERE companyName='Company2'))";
+	    			+ " active, company)" +
+	    			"VALUES ('"+i+"', 'Worker', NULL, NULL, 'MongoDB', True, '2')";
 	    	
 	    	preparedStmt2 = con.prepareStatement(str2);
 	    	preparedStmt2.execute();
 	    	con.commit();
 	    	}
-	    	
+	    	// max salary '50000'
 	    	for(int i = 500000; i < 750000; i++){
 	    	str2 = "INSERT INTO JobPost(id, jobPosition, minSalary, maxSalary, description,"
-	    			+ " active, recruiter, schedueled, company)" +
-	    			"VALUES ('"+i+"', 'Worker', NULL, '50000', NULL, True, "
-	    					+ "(SELECT email FROM Recruiter WHERE email='email3@email.com'), "
-	    					+ "NULL, "
-	    					+ "(SELECT id FROM Company WHERE companyName='Company3'))";
+	    			+ " active, company)" +
+	    			"VALUES ('"+i+"', 'Worker', NULL, '50000', NULL, True, '3')";
 	    	
 	    	preparedStmt2 = con.prepareStatement(str2);
 	    	preparedStmt2.execute();
 	    	con.commit();
 	    	}
-	    	
+	    	// max salary '75000'
 	    	for(int i = 750000; i < 1000000; i++){
 	    	str2 = "INSERT INTO JobPost(id, jobPosition, minSalary, maxSalary, description,"
-	    			+ " active, recruiter, schedueled, company)" +
-	    			"VALUES ('"+i+"', 'Worker', NULL, '75000', NULL, True, "
-	    					+ "(SELECT email FROM Recruiter WHERE email='email4@email.com'), "
-	    					+ "NULL, "
-	    					+ "(SELECT id FROM Company WHERE companyName='Company4'))";
+	    			+ " active, company)" +
+	    			"VALUES ('"+i+"', 'Worker', NULL, '75000', NULL, True, '4')";
 	    	
 	    	preparedStmt2 = con.prepareStatement(str2);
 	    	preparedStmt2.execute();
 	    	con.commit();
 	    	}
-
+	    	
 	    } catch (SQLException oops) {
 	    	System.err.println("Something went very wrong.");
 	    	con.rollback();

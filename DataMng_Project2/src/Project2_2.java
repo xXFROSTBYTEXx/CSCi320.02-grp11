@@ -114,51 +114,10 @@ public class Project2_2 {
 	    	preparedStmt2.execute();
 	    	con.commit();
 	    	
-	    	//Interviews during 2013 and 2014
-	    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-	    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-	    			+ "'2013-01-01')";
-	    	preparedStmt2 = con.prepareStatement(str2);
-	    	preparedStmt2.execute();
-	    	con.commit();
-	    	
-	    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-	    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-	    			+ "'2014-01-01')";
-	    	preparedStmt2 = con.prepareStatement(str2);
-	    	preparedStmt2.execute();
-	    	con.commit();
-	    	
-	    	//Champion Recruiter 2014 - 2016
-	    	for(int i = 2; i < 12; i++){
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2014-01-0"+i+"')";
-		    	preparedStmt2 = con.prepareStatement(str2);
-		    	preparedStmt2.execute();
-		    	con.commit();
-		    	
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2015-01-0"+i+"')";
-		    	preparedStmt2 = con.prepareStatement(str2);
-		    	preparedStmt2.execute();
-		    	con.commit();
-		    	
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2016-01-0"+i+"')";
-		    	preparedStmt2 = con.prepareStatement(str2);
-		    	preparedStmt2.execute();
-		    	con.commit();
-	    	}
-	    	
 	    	//JobPost 'Worker' max salary
 	    	str2 = "INSERT INTO JobPost(id, jobPosition, minSalary, maxSalary, description,"
-	    			+ " active, recruiter, schedueled, company)" +
+	    			+ " active, company)" +
 	    			"VALUES ('1', 'Worker', '20000', '100000', NULL, True, "
-	    					+ "(SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-	    					+ "NULL, "
 	    					+ "(SELECT id FROM Company WHERE companyName='Company1'))";
 	    	
 	    	preparedStmt2 = con.prepareStatement(str2);
@@ -167,15 +126,54 @@ public class Project2_2 {
 	    	
 	    	//JobPost for 'Software Developer'
 	    	str2 = "INSERT INTO JobPost(id, jobPosition, minSalary, maxSalary, description,"
-	    			+ " active, recruiter, schedueled, company)" +
+	    			+ " active, company)" +
 	    			"VALUES ('2', 'Software Developer', '25000', '75000', NULL, True, "
-	    					+ "(SELECT email FROM Recruiter WHERE email='email2@email.com'), "
-	    					+ "NULL, "
 	    					+ "(SELECT id FROM Company WHERE companyName='Company2'))";
 	    	
 	    	preparedStmt2 = con.prepareStatement(str2);
 	    	preparedStmt2.execute();
 	    	con.commit();
+	    	
+	    	//Interviews during 2013 and 2014
+	    	str2 = "INSERT INTO Interview(recruiter, schedueled, jobPost)" +
+	    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
+	    			+ "'2013-01-01', '1')";
+	    	preparedStmt2 = con.prepareStatement(str2);
+	    	preparedStmt2.execute();
+	    	con.commit();
+	    	
+	    	str2 = "INSERT INTO Interview(recruiter, schedueled, jobPost)" +
+	    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
+	    			+ "'2014-01-01', '1')";
+	    	preparedStmt2 = con.prepareStatement(str2);
+	    	preparedStmt2.execute();
+	    	con.commit();
+	    	
+	    	//Champion Recruiter 2014 - 2016
+	    	for(int i = 2; i < 13; i++){
+		    	str2 = "INSERT INTO Interview(recruiter, schedueled, jobPost)" +
+		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
+		    			+ "'2014-01-0"+i+"', '1')";
+		    	preparedStmt2 = con.prepareStatement(str2);
+		    	preparedStmt2.execute();
+		    	con.commit();
+		    	
+		    	str2 = "INSERT INTO Interview(recruiter, schedueled, jobPost)" +
+		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
+		    			+ "'2015-01-0"+i+"', '1')";
+		    	preparedStmt2 = con.prepareStatement(str2);
+		    	preparedStmt2.execute();
+		    	con.commit();
+		    	
+		    	str2 = "INSERT INTO Interview(recruiter, schedueled, jobPost)" +
+		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
+		    			+ "'2016-01-0"+i+"', '1')";
+		    	preparedStmt2 = con.prepareStatement(str2);
+		    	preparedStmt2.execute();
+		    	con.commit();
+	    	}
+	    	
+
 	    	
 	    	//JobPosition for Unemployed during 2015
 	    	str2 = "UPDATE JobPosition SET initD = '2013-01-01', endD = '2014-06-10'"
@@ -203,38 +201,39 @@ public class Project2_2 {
 	    	preparedStmt2.execute();
 	    	con.commit();
 	    	
-	    	/*
-	    	str2 = "INSERT INTO ParticipatesIn(recruiter, schedueled, socialUser)" +
-	    			"VALUES ((SELECT rec FROM Recruiter WHERE email='email1@email.com'), "
-	    			+ "'2014-01-0"+i+"')";
-	    	preparedStmt2 = con.prepareStatement(str2);
-	    	preparedStmt2.execute();
-	    	con.commit();
 	    	
-	    	//Champion Recruiter 2014 - 2016
-	    	for(int i = 2; i < 12; i++){
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
+	    	//User who participates in on average more than 10 interviews a year
+	    	for(int i = 2; i < 13; i++){
+	    		
+		    	str2 = "INSERT INTO ParticipatesIn(recruiter, schedueled, jobPost, socialUser)" +
 		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2014-01-0"+i+"')";
+		    			+ "(SELECT schedueled FROM Interview WHERE schedueled='2014-01-0"+i+"'), "
+		    					+ "'1', "
+		    			+ "(SELECT email FROM SocialUser WHERE email='email6@email.com'))";
+		    	preparedStmt2 = con.prepareStatement(str2);
+		    	preparedStmt2.execute();
+		    	con.commit();
+		    
+		    	str2 = "INSERT INTO ParticipatesIn(recruiter, schedueled, jobPost, socialUser)" +
+		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
+		    			+ "(SELECT schedueled FROM Interview WHERE schedueled='2015-01-0"+i+"'), "
+		    					+ "'1', "
+		    			+ "(SELECT email FROM SocialUser WHERE email='email6@email.com'))";
 		    	preparedStmt2 = con.prepareStatement(str2);
 		    	preparedStmt2.execute();
 		    	con.commit();
 		    	
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
+		    	str2 = "INSERT INTO ParticipatesIn(recruiter, schedueled, jobPost, socialUser)" +
 		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2015-01-0"+i+"')";
+		    			+ "(SELECT schedueled FROM Interview WHERE schedueled='2016-01-0"+i+"'), "
+		    					+ "'1', "
+		    			+ "(SELECT email FROM SocialUser WHERE email='email6@email.com'))";
 		    	preparedStmt2 = con.prepareStatement(str2);
 		    	preparedStmt2.execute();
 		    	con.commit();
-		    	
-		    	str2 = "INSERT INTO Interview(recruiter, schedueled)" +
-		    			"VALUES ((SELECT email FROM Recruiter WHERE email='email1@email.com'), "
-		    			+ "'2016-01-0"+i+"')";
-		    	preparedStmt2 = con.prepareStatement(str2);
-		    	preparedStmt2.execute();
-		    	con.commit();
+		   
 	    	}
-	    	*/
+
 	    } catch (SQLException oops) {
 	    	System.err.println("Something went very wrong.");
 	    	con.rollback();
