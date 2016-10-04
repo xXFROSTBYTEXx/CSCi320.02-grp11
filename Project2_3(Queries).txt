@@ -1,0 +1,69 @@
+3.1)
+
+SELECT email 
+FROM SocialUser AS s JOIN WorksIn 
+	ON s.email = socialUser
+		INNER JOIN jobposition jp 
+			ON WorksIn.jobPosition = jp.id
+        WHERE (jp.endD < '2015-01-01' OR jp.initD > '2015-12-31')
+	AND s.lastName LIKE 'Smi%'
+	
+3.2)
+
+
+3.3)
+
+SELECT AVG(minSalary) FROM JobPost JOIN Company
+
+WHERE (SELECT COUNT(company) FROM jobposition 
+		WHERE company = Company.id 
+        GROUP BY company 
+        HAVING COUNT(company)>1000) 
+		
+3.4)
+
+Select distinct email from Recruiter AS r JOIN Interview 
+	ON r.email = recruiter
+	WHERE(schedueled BETWEEN '2013-01-01' AND '2014-12-31')
+
+3.5)
+
+Select distinct company FROM JobPost JOIN company 
+WHERE (SELECT MAX(maxSalary) FROM JobPost 
+		WHERE company = company.id 
+			AND active = true 
+            GROUP BY company)
+
+3.6)
+
+SELECT DISTINCT email 
+FROM Recruiter AS r JOIN interview 
+	ON r.email = recruiter
+		WHERE(SELECT COUNT(recruiter) FROM Interview 
+				GROUP BY recruiter
+				ORDER BY recruiter DESC
+				LIMIT 1)
+	AND schedueled BETWEEN '2014-01-01' AND '2016-12-31'
+	
+3.7)
+
+SELECT email 
+FROM SocialUser AS s JOIN WorksIn
+	ON s.email = socialUser
+		INNER JOIN jobPosition
+			ON WorksIn.jobPosition = jobPosition.id
+				INNER JOIN Company 
+					ON Company.id = jobPosition.company
+						INNER JOIN JobPost jpst
+							ON  jpst.company = Company.id
+						WHERE(jobPosition.initD IS NOT NULL AND jobPosition.endD IS NULL)
+                        AND jpst.active = true AND jpst.jobPosition LIKE 'Software Developer'
+					
+3.8)
+***** DOES NOT WORK *******
+SELECT AVG(email) from SocialUser as s JOIN ParticipatesIn pi
+	ON s.email = pi.socialUser
+            WHERE(SELECT COUNT(socialUser)  FROM interview
+				Where schedueled = pi.schedueled
+				group by socialUser
+				HAVING COUNT(socialUser) < 10)

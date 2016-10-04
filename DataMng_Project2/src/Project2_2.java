@@ -59,6 +59,14 @@ public class Project2_2 {
 	    	PreparedStatement preparedStmt1 = con.prepareStatement(str1);
 	    	preparedStmt1.execute();
 	    	con.commit();
+	    	
+	    	 str1 = "INSERT INTO BranchesInto(main, branch)" +
+		    			"VALUES ((SELECT id FROM company WHERE companyName='Company2'),"
+		    			+ " (SELECT id FROM company WHERE companyName='Company3'))";
+		  
+		    preparedStmt1 = con.prepareStatement(str1);
+		    preparedStmt1.execute();
+		    con.commit();
 	   
 	    	//Create SocialUsers 1-5
 	    	for(int i = 1; i < 6; i++){
@@ -178,6 +186,13 @@ public class Project2_2 {
 	    	//JobPosition for Unemployed during 2015
 	    	str2 = "UPDATE JobPosition SET initD = '2013-01-01', endD = '2014-06-10'"
 	    			+ " WHERE id='1'";
+	    	preparedStmt2 = con.prepareStatement(str2);
+	    	preparedStmt2.execute();
+	    	con.commit();
+	    	
+	    	//JobPosition for Still Employed
+	    	str2 = "UPDATE JobPosition SET initD = '2013-01-01'"
+	    			+ " WHERE id='1003'";
 	    	preparedStmt2 = con.prepareStatement(str2);
 	    	preparedStmt2.execute();
 	    	con.commit();
