@@ -1,0 +1,20 @@
+SELECT jobPosition FROM JobPost AS j 
+WHERE(j.description LIKE 'Great Opportunity!')
+
+SELECT jobPosition FROM JobPost AS j 
+WHERE(j.description LIKE 'MongoDB')
+
+SELECT jobPosition FROM JobPost AS j 
+WHERE(j.maxSalary = 100000)
+
+SELECT jobPosition FROM JobPost AS j 
+WHERE(j.maxSalary < 100000)
+
+SELECT jobPosition FROM JobPost AS j 
+WHERE(j.maxSalary >= 75000)
+
+SELECT jobPosition FROM JobPost AS j 
+WHERE(j.maxSalary <> 70000)
+
+SELECT jobPosition FROM JobPost AS j 
+WHERE(j.maxSalary BETWEEN 70000 AND 100001)
