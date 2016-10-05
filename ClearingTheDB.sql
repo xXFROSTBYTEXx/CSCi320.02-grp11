@@ -1,3 +1,4 @@
+SET SQL_SAFE_UPDATES = 0;
 delete from participatesin;
 delete from interview;
 delete from recruiter;
