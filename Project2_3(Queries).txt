@@ -10,6 +10,10 @@ FROM SocialUser AS s JOIN WorksIn
 	
 3.2)
 
+SELECT distinct id FROM Company JOIN BranchesInto 
+	ON company.id = main
+		WHERE main NOT IN (SELECT branch FROM BranchesInto)
+	AND main IN (SELECT main FROM BranchesInto) 
 
 3.3)
 
@@ -60,10 +64,10 @@ FROM SocialUser AS s JOIN WorksIn
                         AND jpst.active = true AND jpst.jobPosition LIKE 'Software Developer'
 					
 3.8)
-***** DOES NOT WORK *******
-SELECT AVG(email) from SocialUser as s JOIN ParticipatesIn pi
-	ON s.email = pi.socialUser
-            WHERE(SELECT COUNT(socialUser)  FROM interview
-				Where schedueled = pi.schedueled
-				group by socialUser
-				HAVING COUNT(socialUser) < 10)
+
+SELECT DISTINCT email FROM SocialUser AS s JOIN ParticipatesIn
+	ON s.email = socialUser
+		WHERE (SELECT COUNT(*) FROM ParticipatesIn
+				WHERE(schedueled between '2014-01-01' AND '2016-12-31')
+                HAVING COUNT(*) > 30)
+                
