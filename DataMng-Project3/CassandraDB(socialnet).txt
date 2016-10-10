@@ -1,0 +1,61 @@
+CREATE KEYSPACE socialnet WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3'}  AND durable_writes = true;
+
+CREATE TABLE socialnet.worksin (
+    socialuser text,
+    jobposition int,
+    PRIMARY KEY (socialuser, jobposition),
+); 
+
+CREATE TABLE socialnet.socialuser (
+    email text PRIMARY KEY,
+    firstname text,
+    lastname text
+);
+
+CREATE TABLE socialnet.recruiter (
+    email text PRIMARY KEY
+);
+
+CREATE TABLE socialnet.branchesinto (
+    main int,
+    branch int,
+    PRIMARY KEY (main, branch)
+);
+
+CREATE TABLE socialnet.jobpost (
+    id int PRIMARY KEY,
+    active boolean,
+    company int,
+    description text,
+    jobposition text,
+    maxsalary int,
+    minsalary int
+);
+
+CREATE TABLE socialnet.participatesin (
+    recruiter text,
+    schedueled timestamp,
+    jobpost int,
+    socialuser text,
+    PRIMARY KEY (recruiter, schedueled, jobpost, socialuser)
+);
+
+CREATE TABLE socialnet.interview (
+    recruiter text,
+    schedueled timestamp,
+    jobpost int,
+    PRIMARY KEY (recruiter, schedueled, jobpost)
+);
+
+CREATE TABLE socialnet.jobposition (
+    id int PRIMARY KEY,
+    company int,
+    endd timestamp,
+    initd timestamp,
+    title text
+);
+
+CREATE TABLE socialnet.company (
+    id int PRIMARY KEY,
+    companyname text
+);
