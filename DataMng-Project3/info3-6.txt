@@ -1,0 +1,22 @@
+Tucker Morgan, Bernie _______, Matt maloney -- Group 7
+Assignment 3 - 6
+
+There are many wide-column (column-oriented) databases  in existance, and the top-3
+database managers, according to db-engine.com, are developed by Apache. For this reason, 
+Hypertable will be included in the following comparative analysis. Also, to shed light 
+on the quality of Apache, it should be noted that their two of their column-oriented DBMSes 
+included here are within the top-ten of all DBMSes, where as 
+hypertable is ranked #156 amoung all DBMSes.
+
+Apache Hbase, and Hypertable are both database management systems (DBMS) which were 
+developed with the intent of handling large data. Both DBMSes are open-source and based 
+on Google's Bigtable, a proprietary file system. However, only Hbase was writen in the same language
+(Java) as Bigtable, while Hypertable uses C++ which is known to be a more functional language, making
+it's ranking of the 150's odd. Neither support SQL, nor do they run on schemas, so they are 
+'schema free,' which is beneficial in many regards: deep-query ability and a clear path 
+to horizontal scalability (ability to increase capacity while they work as a single logical 
+unit). Adding contrast between a column-oriented and a relational, neither follow the ACID model that 
+Relational Database Model Systems (RDBMS) abide by; Hbase lacks atomicity when performing a transaction 
+on multiple rows. Subsequently, although they do not support SQL, they are sometimes preferred
+as a DBMS because of their scalability and sometimes-considered easier process because of them not
+requiring a schema.
