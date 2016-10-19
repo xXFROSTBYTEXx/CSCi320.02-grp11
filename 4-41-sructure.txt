@@ -2,7 +2,7 @@ Assignment4 : Database {
 
 	InterviewEvents : Collection {
 
-		Job Post {
+		Job Post : Document {
 
 			id : int
 			position : string
@@ -11,9 +11,9 @@ Assignment4 : Database {
 			active : boolean
 			company : int
 
-			}
+		}
 			
-		Interview {
+		Interview : Document {
 			
 			id : int
 			participant : int
@@ -23,7 +23,7 @@ Assignment4 : Database {
 			
 		}
 			
-		Candidates {
+		Candidates : Document {
 
 			id : int
 			FirstName : String
@@ -32,7 +32,7 @@ Assignment4 : Database {
 		}
 
 
-		Participants {
+		Participants  : Document {
 
 			id : int
 			FirstName : String
