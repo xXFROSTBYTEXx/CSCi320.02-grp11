@@ -1,0 +1,29 @@
+Job Post : Collection
+
+	id : int
+	position : string
+	minSalary : int
+	maxSalary : int
+	active : boolean
+	company : int
+
+Interview : Collection
+	
+	id : int
+	participant : int
+	candidate : int
+	jobPost : int
+	scheduled : date
+	
+Candidates : Collection
+
+	id : int
+	FirstName : String
+	lastName : String
+
+
+Participants : Collection
+
+	id : int
+	FirstName : String
+	lastName : String
