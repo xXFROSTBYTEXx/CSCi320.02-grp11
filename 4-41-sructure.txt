@@ -1,29 +1,45 @@
-Job Post : Collection
+Assignment4 : Database {
 
-	id : int
-	position : string
-	minSalary : int
-	maxSalary : int
-	active : boolean
-	company : int
+	InterviewEvents : Collection {
 
-Interview : Collection
+		Job Post {
+
+			id : int
+			position : string
+			minSalary : int
+			maxSalary : int
+			active : boolean
+			company : int
+
+			}
+			
+		Interview {
+			
+			id : int
+			participant : int
+			candidate : int
+			jobPost : int
+			scheduled : date
+			
+		}
+			
+		Candidates {
+
+			id : int
+			FirstName : String
+			lastName : String
+			
+		}
+
+
+		Participants {
+
+			id : int
+			FirstName : String
+			lastName : String
+			
+		}
+
+	}
 	
-	id : int
-	participant : int
-	candidate : int
-	jobPost : int
-	scheduled : date
-	
-Candidates : Collection
-
-	id : int
-	FirstName : String
-	lastName : String
-
-
-Participants : Collection
-
-	id : int
-	FirstName : String
-	lastName : String
+}
