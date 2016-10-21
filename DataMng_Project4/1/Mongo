@@ -1,0 +1,12 @@
+use socialnet;
+
+db.createCollection("interviews",{autoIndexID : true})
+
+db.interviews.insert(
+  {"recruiter"    : "recruiter1@email.com",
+   "candidate"    : { "username"    : "candidate1@email.com",
+                      "rescheduled" :  false},
+   "participant"  : { "username"    : "participant1@email.com",
+                      "replacement" :  false},
+   "date"         : ISODate("2014-01-01"),
+   "company"      : 1})
