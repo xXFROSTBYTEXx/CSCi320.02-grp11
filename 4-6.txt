@@ -1,0 +1,13 @@
+Key-value stores are possibly the simplest, conceptually, and most
+direct form of database model for a Database Management System (DBMS), and 
+for the two leading systems, Redis and Memcached, do not display much disparitty.
+With this being the case, Redis is 14 rankings ahead of Memcached in the 
+overall rankings, but only one in the ranking of the exclisively key-value stores.
+Memcached initially releasedseven years prior to Redis' release; however, with this 
+and theirr both having a current-generation release, Redis is on a higher version 
+number, indicating that Redis updates their product more often Subsequently, this explains 
+their higher ranking among databases alike and overall. Another benefactor lrading 
+to Redis' success is probably due to their suppor of 'typing,' which is predefned
+data types, such as date and float. Lastly, Redis makes their application programatically
+available to 36 different languages, which ultimately broadens their clientel and 
+mass-appeal.
