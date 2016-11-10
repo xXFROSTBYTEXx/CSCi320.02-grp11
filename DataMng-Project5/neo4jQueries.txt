@@ -1,0 +1,11 @@
+MATCH (u1:User) - [:Recommends] -> (u2:User)
+WHERE u2.worksAt = "Amazon"
+RETURN u2.firstName
+
+MATCH (u1:User) - [:Friends] -> (u2:User)
+WHERE u2.recommended = "true"
+RETURN u1.firstName
+
+MATCH (u1:User) - [:Recommends] -> (u2:User)
+WHERE u2.worksAt = "IBM"
+RETURN u1.firstName

@@ -1,0 +1,19 @@
+SELECT ?u ?j ?m ?jl ?ml
+WHERE {
+    ?u  rdf:type            model:User.
+    ?u  model:hasSkill/model:Java                  ?j.
+    ?u  model:hasSkill/model:MongoDB               ?m.
+    ?u  model:hasSkill/model:Java/model:level     ?jl.
+    ?u  model:hasSkill/model:MongoDB/model:level  ?ml.
+
+    FILTER(?jl = "expert" && ?ml = "expert")   
+}
+
+SELECT ?u ?s ?p
+WHERE {
+    ?u  rdf:type            model:User.
+    ?s  model:skill         ?s.
+    ?u  model:proficiency   ?p.
+
+    FILTER(?s = "Java" && ?p = 10)
+}

@@ -1,0 +1,30 @@
+@prefix data:  <http://ourdomain.com/data/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLShema#> .
+@prefix model: <http://ourdomain/model/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+data:Skill0       rdf:type          model:Skill.
+model:name        "MongoDB".
+model:prof        "Minimal".
+
+data:Skill1       rdf:type          model:Skill.
+model:name        "MongoDB".
+model:prof        "Expert" .
+
+data:User0          rdf:type          model:User.
+model:connectedTo     data:User61,  data:User193.
+model:firstName                           "John".
+model:hasSkill          data:Skill0  data:Skill1.
+model:lastName                          "Smith" .
+
+data:User193       rdf:type            model:User.
+model:connectedTo  data:User22 , data:User26 , data:User31 , data:User34.
+model:firstName    "Jim".
+model:hasSkill     data:Skill9.
+model:lastName     "Johnson".
+
+data:Rec15         rdf:type          model:Rec.
+model:company                         "Google".
+model:desc     "jpfrhafsagdvynliozjeatekfduslsgqrbgydwbazhfvaxpcmx".
+model:person                        data:User0.

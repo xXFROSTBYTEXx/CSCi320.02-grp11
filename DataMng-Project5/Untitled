@@ -1,0 +1,36 @@
+@prefix   data: <http://ourdomain.com/data/>.
+@prefix   model: <http://ourdomain.com/model/>.
+
+@prefix   rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix   rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+
+data:524-67-1897	rdf:type				           model:User.
+data:524-67-1897	model:skill				    "C Programming".
+data:524-67-1897	model:proficiency	                 10.
+data:524-67-1897	model:reccLetters		                0.
+
+data:524-67-1897	rdf:type				           model:User.
+data:524-67-1897	model:skill				             "Java".
+data:524-67-1897	model:proficiency	                 10.
+data:524-67-1897	model:reccLetters		                0.
+
+data:524-67-1897	rdf:type				           model:User.
+data:524-67-1897	model:skill				          "MongoDB".
+data:524-67-1897	model:proficiency	                 10.
+data:524-67-1897	model:reccLetters		                0.
+
+data:524-67-1896	rdf:type				           model:User.
+data:524-67-1896	model:skill				             "Java".
+data:524-67-1896	model:proficiency	                 10.
+data:524-67-1896	model:reccLetters		                0.
+
+data:524-67-1895	rdf:type				           model:User.
+data:524-67-1895	model:skill				 "Apache Cassandra".
+data:524-67-1895	model:proficiency	                 10.
+data:524-67-1895	model:reccLetters		                0.
+
+data:524-67-1894	rdf:type				           model:User.
+data:524-67-1894	model:skill				 "Apache Cassandra".
+data:524-67-1894	model:proficiency	                 10.
+data:524-67-1894	model:reccLetters		                0.
