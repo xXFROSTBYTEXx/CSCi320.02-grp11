@@ -1,19 +1,19 @@
-data.52467897	rdf.type				model.user.
-data.52467897	user.skill				"C Programming".
-data.52467897	model.skill/proficiency	10.
-data.52467897	model.reccLetters		0.
+data:52467897	rdf:type				model:user.
+data:52467897	user:skill				"C Programming".
+data:52467897	model:skill/proficiency	10.
+data:52467897	model:reccLetters		0.
 
-data.52461234	rdf.type				model.user.
-data.52461234	user.skill				"C Programming".
-data.52461234	model.skill/proficiency	4.
-data.52461234	model.reccLetters		2 #no of letters.
-data.52461234	model.reccLetters/1		Software Developer.
-data.52461234	model.reccLetters/2		Systems Programmer.
+data:52461234	rdf:type				model:user.
+data:52461234	user:skill				"C Programming".
+data:52461234	model:skill/proficiency	4.
+data:52461234	model:reccLetters		2.    				#no of letters:
+data:52461234	model:reccLetters/1		Software Developer.
+data:52461234	model:reccLetters/2		Systems Programmer.
 
-data.12563234	rdf.type				model.user.
-data.12563234	user.skill				"Engineering".
-data.12563234	model.skill/proficiency	7.
-data.12563234	model.reccLetters		1 #no of letters.
-data.12563234	model.reccLetters/1		Structural Analyst.
+data:12563234	rdf:type				model:user.
+data:12563234	user:skill				"Engineering".
+data:12563234	model:skill/proficiency	7.
+data:12563234	model:reccLetters		1.    				#no of letters.
+data:12563234	model:reccLetters/1		Structural Analyst.
 
 
