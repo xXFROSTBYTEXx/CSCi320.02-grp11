@@ -1,0 +1,92 @@
+a)
+	(model:User, rdf:type, rdfs:CLass)
+	(model:friend, rdf:subClassOf, rdfs:User)
+	(model:friend, rdfs:range, model:User)
+	(model:purchased,rdfs:subClassOf, model:User)
+	(model:purchased, rdfs:range, model:Product)
+	(model:Product, rdf:type, rdfs:Literal)
+	
+2b)
+	AmazonNot : Database {
+
+		Coupons : Collection {
+
+			halfoff : Document {
+
+				id : int
+				percentageOff : double
+				start: date	
+				end : date	
+
+			}
+				
+			bogo : Document {
+
+				id : int
+				percentageOff : double
+				start: date	
+				end : date	
+
+			}
+			
+			newYear : Document {
+
+				id : int
+				percentageOff : double
+				start: date	
+				end : date	
+
+			}
+
+		}
+	
+	}
+	
+2c)
+	CREATE TABLE CompanySales (
+	
+	productId int PRIMARY KEY,
+    year int
+    sold int
+	storeId int
+	
+	);
+	
+	CREATE INDEX ON CompanySales (year);
+	CREATE INDEX ON CompanySales (storeId);
+	
+ad)
+	Community : Database {
+
+		Entities : Collection {
+
+			Company : Document {
+
+				id : int
+				name : string
+				employees : int				
+				profit : int
+				ranking : int	
+				founded : date	
+
+			}
+			
+			User : Document {
+
+				id : int
+				name : string
+				worksFor : int    -the int is id of comopany
+				position : string
+				salary : int
+				effRating : int   - an effectiveness rating 
+				start: date	
+				end : date	
+
+			}
+
+		}
+	
+	}
+
+
+	
