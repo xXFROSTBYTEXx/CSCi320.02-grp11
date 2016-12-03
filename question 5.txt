@@ -1,0 +1,35 @@
+An insert anomaly occurs when an entry cannot be inserted becausea an attribute is not present (NULL).
+
+Courses
+NAME		ID		STUDENT		GPA		ENROLLED
+
+CS-320		142		Jip Kolon	3.0		10-01-2016
+CS-320		142		Kirk Kolon	1.68	09-22-2016
+CS-561		687		Mip Pelick	3.78	11-27-2016
+
+The insertion anomaly happens since an entry cannot be inseerted, if that entry's student name is NULL. A primary key cannot be null.
+
+
+The deletion anomaly occurs when one entry is present in a table, and is to be deleted. Doing so will delete the table's information
+
+If the table were:
+
+Courses
+NAME		ID		STUDENT		GPA		ENROLLED
+
+CS-320		142		Jip Kolon	3.0		10-01-2016
+
+If this student were to drop the course than all of the table's information is gone.
+
+
+Occuring in inconsistent database, update anomalies happen when modifying an entry, causes another entry to be updated.
+
+Courses
+NAME		ID		STUDENT		GPA		ENROLLED
+
+CS-320		142		Jip Kolon	3.0		10-01-2016
+PK-510		435		Jip Kolon	3.0		10-01-2016
+CS-561		687		Mip Pelick	3.78	11-27-2016
+
+
+In this table, only modifying, say GPA, will create an inconsistency, such that the second instance of Kirk will have the old GPA.
