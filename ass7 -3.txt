@@ -1,0 +1,9 @@
+3.
+	a3 is dependent on a4, with 70% condidence
+		this relationship depends on a4->a1, with a 71.4% confidence.
+		there is a 75% that this relationship then has a cuclic relationship with a4
+	a4 depends on a3 with a 72% confidence
+		with this relationship, it connects to a1, with a 77% confidence
+		
+4.
+	
