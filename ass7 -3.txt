@@ -1,9 +1,5 @@
 3.
-	a3 is dependent on a4, with 70% condidence
-		this relationship depends on a4->a1, with a 71.4% confidence.
-		there is a 75% that this relationship then has a cuclic relationship with a4
-	a4 depends on a3 with a 72% confidence
-		with this relationship, it connects to a1, with a 77% confidence
-		
-4.
+	a3  is strongly dependent on a4 and this is also dependent on a1. If a3 is active then a4 is likely to be active because an analysis shows a cyclical relationship. If a3 and a1 are active than a4 will most probably be active. If a2 and a3 are active, then a4 will be active. The association rules tha were not mentioned were used to help write this analysis.
 	
+4. 
+	Similar to finding the  centralized mean in the data, the centroid table shows that the distribution of clusters is a positively-related line, sloping off around 100 ( Proportion of singular values VS single valued vectors)
